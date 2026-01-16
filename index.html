@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Prediction</title>
+</head>
+<body>
+
+<div class="container">
+    <h2>House Price Prediction</h2>
+
+    <form method="POST" action="/predict">
+        <input type="number" name="area" placeholder="House Area (sq ft)" required>
+        <input type="number" name="bedrooms" placeholder="Number of Bedrooms" required>
+        <input type="number" name="bathrooms" placeholder="Number of Bathrooms" required>
+        <input type="number" name="age" placeholder="House Age (years)" required>
+
+        <button type="submit">Predict Price</button>
+    </form>
+
+    {% if prediction %}
+        <h3>Predicted Price: ₦{{ prediction }}</h3>
+    {% endif %}
+</div>
+
+</body>
+</html>
